@@ -84,8 +84,6 @@ async def SendMessagePacketToAirtouch(messageString, ipAddress, atVersion, atPor
     #hexdump(response) # for debugging
     return response;
 
-import numpy as np
-
 def crc16(data: bytes):
     '''
     CRC-16-ModBus Algorithm
@@ -101,4 +99,4 @@ def crc16(data: bytes):
             else:
                 crc = ((crc >> 1) & 0xFFFF)
 
-    return np.uint16(crc)
+    return crc

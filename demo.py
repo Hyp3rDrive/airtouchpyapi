@@ -1,3 +1,5 @@
+#!/usr/bin/env python3
+
 import sys
 
 import asyncio
@@ -14,7 +16,7 @@ def print_acs(acs):
     for ac in acs:
         print(f"AC Name: {ac.AcName:15s} AC Number: {ac.AcNumber:3d} IsOn: {ac.IsOn} PowerState: {ac.PowerState:3s} Target: {ac.AcTargetSetpoint:3.1f} Temp: {ac.Temperature:3.1f} Modes Supported: {ac.ModeSupported} Fans Supported: {ac.FanSpeedSupported} startGroup: {ac.StartGroupNumber: 2d} GroupCount: {ac.GroupCount:2d} Spill: {ac.Spill}")
 
-async def updateInfoAndDisplay(ip) -> asyncio.coroutine:
+async def updateInfoAndDisplay(ip) -> asyncio.coroutines:
     at = AirTouch(ip)
     await at.UpdateInfo()
     if(at.Status != AirTouchStatus.OK):
